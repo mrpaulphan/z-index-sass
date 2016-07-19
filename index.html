@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Z-Index</title>
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="http://placehold.it/100x50?text=logo" alt="">
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li data-toggle="nav">Contact</li>
+            <li data-target="nav" class="sub-nav">
+                <ul>
+                    <li>item 1</li>
+                    <li>item 1</li>
+                    <li>item 1</li>
+                    <li>item 1</li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="body">
+        <div class="modal"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sequi nostrum deleniti, perferendis molestiae labore unde reprehenderit quidem voluptas facilis porro est praesentium, animi fuga provident minima dicta repellat magni.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sequi nostrum deleniti, perferendis molestiae labore unde reprehenderit quidem voluptas facilis porro est praesentium, animi fuga provident minima dicta repellat magni.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sequi nostrum deleniti, perferendis molestiae labore unde reprehenderit quidem voluptas facilis porro est praesentium, animi fuga provident minima dicta repellat magni.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sequi nostrum deleniti, perferendis molestiae labore unde reprehenderit quidem voluptas facilis porro est praesentium, animi fuga provident minima dicta repellat magni.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sequi nostrum deleniti, perferendis molestiae labore unde reprehenderit quidem voluptas facilis porro est praesentium, animi fuga provident minima dicta repellat magni.</p>
+
+    </div>
+
+    <footer class="footer">
+        <p>Copyright &copy; MrPaulPhan</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        // Jquery
+
+        function toggle() {
+            var toggle = $('[data-toggle]');
+            var toggleAttr = 'data-toggle';
+            var target = $('[data-target]');
+            var duration = 200;
+            var easing = 'swing';
+
+            toggle.click(function(e) {
+                e.stopPropagation;
+                var toggleId = $(this).attr('data-toggle');
+                var thisTarget = $('[data-target="' + toggleId + '"]');
+                var thisText = $('[data-toggle-text="' + toggleId + '"]');
+                var currentText = thisText.text();
+
+                switch (toggleId) {
+                    case 'navigation':
+                        thisTarget.slideToggle(duration, easing);
+                        break;
+                    case 'deliveries':
+                        thisTarget.slideToggle(duration, easing);
+                        thisText.text(currentText == "+" ? "-" : "+");
+                        break;
+                    default:
+                        thisTarget.slideToggle(duration, easing);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            toggle();
+        });
+    </script>
+</body>
+
+</html>

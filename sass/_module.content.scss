@@ -1,0 +1,47 @@
+.header {
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px;
+    z-index: z(header);
+    .logo {
+        img {
+            width: 100%;
+        }
+    }
+    li {
+        color: #fff;
+        display: inline-block;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+    .sub-nav {
+      background: red;
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      z-index: -1;
+      li {
+        display: block;
+        padding: 10px;
+      }
+    }
+}
+
+.body {
+  height: 400px;
+
+}
+
+.footer {
+  background-color: #333333;
+  width: 100%;
+  padding: 20px 0;
+  p {
+    text-align: center;
+    color: #fff;
+  }
+}
